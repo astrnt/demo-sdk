@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="text_headline">22sp</dimen>
+
+    <dimen name="spaces_double">16dp</dimen>
+    <dimen name="spaces_triple">24dp</dimen>
+
+</resources>

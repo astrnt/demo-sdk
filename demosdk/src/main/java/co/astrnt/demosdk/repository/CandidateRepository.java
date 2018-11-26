@@ -1,0 +1,28 @@
+package co.astrnt.demosdk.repository;
+
+import java.util.HashMap;
+
+import co.astrnt.demosdk.core.DemoSDKApi;
+import co.astrnt.demosdk.dao.RegisterApiDao;
+import io.reactivex.Observable;
+
+/**
+ * Created by deni rohimat on 26/11/18
+ */
+public class CandidateRepository extends BaseRepository {
+    private final DemoSDKApi mDemoSDKApi;
+
+    public CandidateRepository(DemoSDKApi demoSDKApi) {
+        mDemoSDKApi = demoSDKApi;
+    }
+
+    public Observable<RegisterApiDao> registerCandidate(String name, String email) {
+
+        HashMap<String, String> map = new HashMap<>();
+        map.put("name", name);
+        map.put("email", email);
+
+        return mDemoSDKApi.getApiService().registerCandidate(map);
+    }
+
+}
