@@ -1,5 +1,5 @@
-### Astronaut Manager SDK for Android
-Currently we just support SDK for Video Interview
+### Astronaut DEMO SDK for Android
+Currently we just support SDK for register candidate, save Id card and upload Interview Video
 
 ##### Make sure you register as Developer Partner at Astronaut. If you haven't, you can register [here](https://developers.astrnt.co/)
 ---
@@ -19,11 +19,11 @@ Add it in your root **build.gradle** at the end of repositories:
 	}
 ```
 2. Add the dependency
-check the version [here](https://github.com/astrnt/manager-sdk/releases)
+check the version [here](https://github.com/astrnt/demo-sdk/releases)
 
 ```
 	dependencies {
-	        implementation 'com.github.astrnt:manager-sdk:latest-version'
+	        implementation 'com.github.astrnt:demo-sdk:latest-version'
 	}
 ```
 
@@ -35,14 +35,14 @@ check the version [here](https://github.com/astrnt/manager-sdk/releases)
             dimension "mode"
             applicationIdSuffix ".betasdk"
             buildConfigField "boolean", "BETA", "true"
-            buildConfigField("String", "API_URL", '"http://beta.astrnt.co/api/v2/"')
+            buildConfigField("String", "API_URL", '"http://beta.astrnt.co/api/"')
             buildConfigField("String", "API_KEY", '"YOUR_API_KEY_HERE"')
             buildConfigField ("int", "SDK_VERSION", "1")
         }
         live {
             dimension "mode"
             buildConfigField "boolean", "BETA", "false"
-            buildConfigField("String", "API_URL", '"http://app.astrnt.co/api/v2/"')
+            buildConfigField("String", "API_URL", '"http://app.astrnt.co/api/"')
             buildConfigField("String", "API_KEY", '"YOUR_API_KEY_HERE"')
             buildConfigField ("int", "SDK_VERSION", "1")
         }
@@ -51,15 +51,15 @@ check the version [here](https://github.com/astrnt/manager-sdk/releases)
 
 4. SetUp SDK in your **Application Class**
 ```
-    private static ManagerSDK managerSDK;
+    private static DemoSDK demoSDK;
 
     public static AstronautApi getApi() {
-        return managerSDK.getApi();
+        return demoSDK.getApi();
     }
 
     private void setUpSDK() {
-        if (managerSDK == null) {
-            managerSDK = new ManagerSDK(this, BuildConfig.API_URL, BuildConfig.DEBUG, BuildConfig.API_KEY);
+        if (demoDK == null) {
+            demoDK = new DemoSDK(this, BuildConfig.API_URL, BuildConfig.DEBUG, BuildConfig.API_KEY);
         }
     }
 
@@ -71,7 +71,7 @@ check the version [here](https://github.com/astrnt/manager-sdk/releases)
     }
 ```
 
-##### For more detail you can see our [sample here.](https://github.com/astrnt/manager-sdk/tree/master/sample)
+##### For more detail you can see our [sample here.](https://github.com/astrnt/demo-sdk/tree/master/sample)
 ---
 ##### Supports
 Sorry, we no longer answer question from repository issues. If you need any assistance, please contact developers@astrnt.co
