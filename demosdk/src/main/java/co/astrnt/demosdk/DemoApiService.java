@@ -2,6 +2,7 @@ package co.astrnt.demosdk;
 
 import java.util.HashMap;
 
+import co.astrnt.demosdk.dao.BaseApiDao;
 import co.astrnt.demosdk.dao.RegisterApiDao;
 import io.reactivex.Observable;
 import retrofit2.http.FieldMap;
@@ -16,5 +17,9 @@ public interface DemoApiService {
     @FormUrlEncoded
     @POST("astronaut/kyck/candidate/save")
     Observable<RegisterApiDao> registerCandidate(@FieldMap HashMap<String, String> data);
+
+    @FormUrlEncoded
+    @POST("astronaut/kyck/card-id/save")
+    Observable<BaseApiDao> saveIdCard(@FieldMap HashMap<String, String> data);
 
 }
