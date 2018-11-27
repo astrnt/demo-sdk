@@ -7,10 +7,10 @@ import co.astrnt.demosdk.core.DemoSDKApi;
 
 public class AstronautApp extends Application {
 
-    private static DemoSDK astrntSDK;
+    private static DemoSDK demoSDK;
 
     public static DemoSDKApi getApi() {
-        return astrntSDK.getApi();
+        return demoSDK.getApi();
     }
 
     @Override
@@ -20,8 +20,8 @@ public class AstronautApp extends Application {
     }
 
     private void setUpSDK() {
-        if (astrntSDK == null) {
-            astrntSDK = new DemoSDK(this, BuildConfig.API_URL, BuildConfig.DEBUG);
+        if (demoSDK == null) {
+            demoSDK = new DemoSDK(BuildConfig.API_URL, BuildConfig.DEBUG);
         }
     }
 }

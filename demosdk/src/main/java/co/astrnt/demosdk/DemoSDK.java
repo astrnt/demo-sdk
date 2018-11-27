@@ -1,7 +1,5 @@
 package co.astrnt.demosdk;
 
-import android.content.Context;
-
 import co.astrnt.demosdk.core.DemoSDKApi;
 import timber.log.Timber;
 
@@ -11,7 +9,7 @@ public class DemoSDK {
     private static String mApiUrl;
     private boolean isDebuggable;
 
-    public DemoSDK(Context context, String apiUrl, boolean debug) {
+    public DemoSDK(String apiUrl, boolean debug) {
         mApiUrl = apiUrl;
         isDebuggable = debug;
 
