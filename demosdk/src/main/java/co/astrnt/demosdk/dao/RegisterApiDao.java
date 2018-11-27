@@ -10,6 +10,9 @@ public class RegisterApiDao extends BaseApiDao {
     @SerializedName("interview_code")
     private String interviewCode;
 
+    @SerializedName("questions")
+    private QuestionApiDao questions;
+
     public String getCandidateIdentifier() {
         return candidateIdentifier;
     }
@@ -24,5 +27,13 @@ public class RegisterApiDao extends BaseApiDao {
 
     public void setInterviewCode(String interviewCode) {
         this.interviewCode = interviewCode;
+    }
+
+    public QuestionApiDao getQuestions() {
+        return questions;
+    }
+
+    public void setQuestions(QuestionApiDao questions) {
+        this.questions = questions;
     }
 }

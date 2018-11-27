@@ -26,11 +26,14 @@ public class DemoSDKApi {
         OkHttpClient.Builder httpClientBuilder = new OkHttpClient.Builder();
         httpClientBuilder.readTimeout(60, TimeUnit.SECONDS);
         httpClientBuilder.connectTimeout(60, TimeUnit.SECONDS);
+        httpClientBuilder.writeTimeout(120, TimeUnit.SECONDS);
+        httpClientBuilder.callTimeout(60, TimeUnit.SECONDS);
         httpClientBuilder.addInterceptor(new Interceptor() {
             @Override
             public Response intercept(@NonNull Chain chain) throws IOException {
                 Request request = chain.request().newBuilder()
-//                        .addHeader("device", "android")
+                        .addHeader("device", "android")
+                        .addHeader("Content-Type", "application/x-www-form-urlencoded")
                         .build();
                 return chain.proceed(request);
             }
