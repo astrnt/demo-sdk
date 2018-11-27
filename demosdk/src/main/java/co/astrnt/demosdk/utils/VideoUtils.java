@@ -12,7 +12,7 @@ public class VideoUtils {
     static final int COMPRESS_QUALITY_LOW = 3;
     private final static int MAX_VIDEO_SIZE = 600;
 
-    public VideoInfo getVideoInfo(String srcPath, String destPath) {
+    public static VideoInfo getVideoInfo(String srcPath) {
 
         File file = new File(srcPath);
         int fileSize = Integer.parseInt(String.valueOf(file.length() / 1024)) / 1000;
@@ -32,7 +32,7 @@ public class VideoUtils {
             return null;
         }
 
-        retriever.setDataSource(destPath);
+        retriever.setDataSource(srcPath);
 
         String width = retriever.extractMetadata(MediaMetadataRetriever.METADATA_KEY_VIDEO_WIDTH);
         String height = retriever.extractMetadata(MediaMetadataRetriever.METADATA_KEY_VIDEO_HEIGHT);
