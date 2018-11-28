@@ -59,7 +59,7 @@ check the version [here](https://github.com/astrnt/demo-sdk/releases)
 
     private void setUpSDK() {
         if (demoDK == null) {
-            demoDK = new DemoSDK(this, BuildConfig.API_URL, BuildConfig.DEBUG, BuildConfig.API_KEY);
+            demoDK = new DemoSDK(BuildConfig.API_URL, BuildConfig.DEBUG);
         }
     }
 
@@ -71,7 +71,7 @@ check the version [here](https://github.com/astrnt/demo-sdk/releases)
     }
 ```
 
-##### For more detail you can see our [sample here.](https://github.com/astrnt/demo-sdk/tree/master/sample)
+##### For more detail you can see our [sample here.](https://github.com/astrnt/demo-sdk/tree/master/sample), [sample using kotlin here.](https://github.com/astrnt/DemoSdkSampleKotlin)
 ---
 ##### Supports
 Sorry, we no longer answer question from repository issues. If you need any assistance, please contact developers@astrnt.co
